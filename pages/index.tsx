@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import { Repo } from '../types/repo'
 import { User } from '../types/user'
 
@@ -19,6 +17,7 @@ const Home: NextPage = () => {
       const response = await fetch(URL) 
       const data = await response.json()
 
+      
       setData(data)
   } catch (error) {
     console.log(error);
@@ -31,7 +30,7 @@ const Home: NextPage = () => {
     const response = await fetch(URL + "/repos")
     const data = await response.json()
 
-    console.log(data);
+    setRepos(data)
 
    } catch (error) {
     console.log(error);

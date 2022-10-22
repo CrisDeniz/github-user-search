@@ -1,29 +1,31 @@
-.master {
+@mixin flexCenter {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  height: 70%;
+}
+
+.master {
+  @include flexCenter;
+  flex-direction: column;
   background: rgb(52, 0, 119);
   color: white;
   box-shadow: 0 0 15px rgb(34, 0, 78);
   border-radius: 20px;
-}
+  width: 60%;
+  height: 70%;
 
-.master input {
-  width: 35%;
-  border: none;
-  letter-spacing: 0.3px;
-  padding: 9px 9px;
-  border-radius: 20px;
-  outline: none;
+    input {
+      width: 35%;
+      border: none;
+      letter-spacing: 0.3px;
+      padding: 9px 9px;
+      border-radius: 20px;
+      outline: none;
+    }
 }
 
 .search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
   width: 100%;
 }
 
@@ -32,40 +34,37 @@
   font-weight: 500;
   width: 100%;
   height: 90%;
-}
 
-.container img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
+  img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
 }
 
 .disc {
-  display: flex;
+  @include flexCenter;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 35%;
   min-width: 35%;
   height: 100%;
   text-align: center;
   margin-left: 15px;
-}
 
-.disc span {
-  margin: 6px 0;
+    span {
+      margin: 6px 0;
+    }
 }
-
 .avatar {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
 
-.avatar div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .info {
@@ -77,29 +76,35 @@
   width: 100%;
   height: 30%;
   background: rgb(47, 0, 100);
+
+    div {
+      display: flex;
+      justify-content: space-around;
+    }
 }
 
-.info div {
-  display: flex;
-  justify-content: space-around;
+.topLine{
+
+    div{
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin: 2px 0;
+      }
+    }
 }
 
-.topLine div{
-  display: flex;
-  flex-direction: column;
-}
+.botLine {
 
-.topLine div span {
-  margin: 2px 0;
-}
-
-.botLine div{
-  display: flex;
-  flex-direction: column;
-}
-
-.botLine div span {
-  margin: 2px 0;
+    div{
+      display: flex;
+      flex-direction: column;
+       
+      span {
+        margin: 2px 0;
+      }
+    }
 }
 
 .repositories {
@@ -122,13 +127,12 @@
   margin: 20px 0;
   background: rgb(95, 3, 180);
   border-radius: 4px;
-  margin-right: 10px;
-}
+  margin-right: 10px; 
 
-
-.repoName span {
-  margin: 7px;
-  font-weight: 400;
+    span {
+      margin: 7px;
+      font-weight: 400;
+    }
 }
 
 .repoName :nth-child(1) {
@@ -176,10 +180,10 @@
 
   .search {
     margin:15px 0 ;
-  }
 
-  .search input {
-    width: 70%;
+    input {
+      width: 70%;
+    }
   }
 
   .disc {
@@ -204,10 +208,10 @@
 
   .avatar {
     flex-direction: row;
-  }
 
-  .avatar div {
-    margin: 0 5px;
+      div {
+        margin: 0 5px;
+      }
   }
 
   .container {
@@ -219,5 +223,11 @@
 @media (max-width: 430px) and (orientation:portrait){
   .master {
     width: 90%;
+  }
+}
+
+@media (max-width: 330px) and (orientation:portrait){
+  .master {
+    width: 95%;
   }
 }
