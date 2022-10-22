@@ -8,7 +8,7 @@ const Home: NextPage = () => {
 
   const [data, setData ] = useState<User>()
   const [repos, setRepos] = useState<Repo>()
-  const [name, setName] = useState('CrisDeniz')
+  const [name, setName] = useState('')
 
   const URL = `https://api.github.com/users/${name}`
 
